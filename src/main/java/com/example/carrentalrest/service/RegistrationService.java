@@ -65,7 +65,7 @@ return users;
                                      Registration registration1=new Registration();
                                       while (resultSet.next()) {
                                           registration1.setUserName(resultSet.getString("username"));
-                                          registration1.setUserName(resultSet.getString("password"));
+                                          registration1.setPassword(resultSet.getString("password"));
                                       }
                                       return registration1;
                                   }

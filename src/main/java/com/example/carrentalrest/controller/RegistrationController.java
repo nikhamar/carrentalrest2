@@ -15,7 +15,9 @@ public class RegistrationController {
     RegistrationService registrationService;
 @PostMapping(value = "/users")
     public void createUsers(@RequestBody Registration registration){
-        registrationService.createUser(registration);
+    System.out.println(registration.getUserName());
+    registrationService.createUser(registration);
+
     }
 @RequestMapping(value = "/users", method = RequestMethod.GET)
 public List<Registration> getAllUsers(Registration registration){
@@ -27,6 +29,10 @@ public Registration getUser(@RequestBody Registration registration){
 }
 @RequestMapping(value = "/user", method = RequestMethod.POST)
 public Registration validateUser(@RequestBody Registration registration){
-    return registrationService.validateUser(registration);
+
+    Registration registration1 = registrationService.validateUser(registration);
+
+    System.out.println(registration1.getUserName() + registration1.getPassword());
+    return registration1;
 }
 }

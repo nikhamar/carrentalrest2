@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="payment",schema = "carrentalschema")
+@Table(name="payment")
 public class PaymentInfo {
 @Column(name = "cardname")
     public String cardName;
